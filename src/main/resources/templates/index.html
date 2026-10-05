@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form th:action="@{/calculadora/calcular}" method="get">
+        <label>Número 1
+            <input type="number" name="a" th:value="${a}">
+        </label>
+        <label>Número 2
+            <input type="number" name="b" th:value="${b}">
+        </label>
+        <select name="operacao" th:value="${operacao}">
+            <option value="somar" th:selected="${operacao == 'somar'}">Somar</option>
+            <option value="subtrair" th:selected="${operacao == 'subtrair'}">Subtrair</option>
+            <option value="multiplicar"th:selected="${operacao == 'multiplicar'}">Multiplicar</option>
+            <option value="dividir"th:th:selected="${operacao == 'dividir'}">Dividir</option>
+        </select>
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+</html>
